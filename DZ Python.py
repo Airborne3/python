@@ -13,7 +13,7 @@ you_age = input("Сколько вам лет?")
 du_you_likes_programming =input('нравится ли вам программировать?')
 
 # Вывод собранных данных
-print('/n вы вывели следующие данные:')
+print(' вы вывели следующие данные:')
 print(f"Имя: {you_name}")
 print(f"Возраст: {you_age}")
 print(f"Вы любите программировать: {du_you_likes_programming}")
