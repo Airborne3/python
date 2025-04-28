@@ -1,4 +1,4 @@
-#                               """ 1 занятие по Python """
+                              # """ 1 занятие по Python """
 from typing import final
 print('Denis')
 print('вторая строка')
@@ -125,8 +125,7 @@ print(list[0])
 print(list[0:3])
 print(list[2:9])
 
-#                             ''' 3 занятие по Python 27.04.25 '''
-
+print                                  ( ''' 3 занятие по Python 27.04.25 ''')
 # Словари
 myDict={'name':'denis','test':'123',123:'hello'}
 print(myDict.values())
