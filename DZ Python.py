@@ -32,6 +32,7 @@ print(f"Вы любите программировать: {du_you_likes_programm
 # # Вывод результата
 # print(f"Результат выражения (y > x - 2): {result}")
 
+# Словарь
 
 person = { "name": you_name, "age": you_age,"любит программировать": du_you_likes_programming }
 
