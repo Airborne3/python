@@ -7,18 +7,18 @@
 #                                              # Домашнее задание номер 2 за 26.04.25
 #
 # Запрос данных у пользователя
-
-you_name = input('как вас зовут? ')
-yoy_last_name = input("какая ваша фамилия?") # Это не по заданию просто понравилось тема интересная
-you_age = input("Сколько вам лет?")
-du_you_likes_programming =input('нравится ли вам программировать?')
-
-# Вывод собранных данных
-print(' Это ваши данные :')
-print(f'Фамилия {yoy_last_name}')
-print(f"Имя: {you_name}")
-print(f"Возраст: {you_age}")
-print(f"Вы любите программировать: {du_you_likes_programming}")
+#
+# you_name = input('как вас зовут? ')
+# yoy_last_name = input("какая ваша фамилия?") # Это не по заданию просто понравилось тема интересная
+# you_age = input("Сколько вам лет?")
+# du_you_likes_programming =input('нравится ли вам программировать?')
+#
+# # Вывод собранных данных
+# print(' Это ваши данные :')
+# print(f'Фамилия {yoy_last_name}')
+# print(f"Имя: {you_name}")
+# print(f"Возраст: {you_age}")
+# print(f"Вы любите программировать: {du_you_likes_programming}")
 #
 #                                  #Задание2
 #
@@ -34,5 +34,11 @@ print(f"Вы любите программировать: {du_you_likes_programm
 
 # Словарь
 
-person = { "name": you_name, "age": you_age,"любит программировать": du_you_likes_programming }
+# person = { "name": you_name, "age": you_age,"любит программировать": du_you_likes_programming }
 
+
+number = int(input('Введите число'))
+if -9 < number < 2:
+    print("Число принадлежит интервалу (-9; 2)")
+else:
+    print("Число не принадлежит интервалу (-9; 2)")
