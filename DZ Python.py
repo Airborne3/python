@@ -36,7 +36,7 @@
 
 # person = { "name": you_name, "age": you_age,"любит программировать": du_you_likes_programming }
 
-
+#                                            ''' Домашнее задание за 10.05.25 '''
 number = int(input('Введите число'))
 if -9 < number < 2:
     print("Число принадлежит интервалу (-9; 2)")
