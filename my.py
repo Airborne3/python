@@ -1,4 +1,5 @@
 import math
+
 #                                                  """ 1 занятие по Python """
 # from typing import final
 # print('Denis')
@@ -200,27 +201,84 @@ import math
 
 #                                                      """ Занятие по Python 10.05.25 """
 # Стандартные математические функции
+#
+# a = -1 #Functiot abs
+# print(abs(a)) # Модуль числа
+#
+# print(pow(2,10)) # Возведение в степень и нахождение остатка
+# print(pow(5,2))
+# print(pow(5,-5))
+# print(pow(5,2,5))
+#
+# print(round(1.3,4))  #Округлить до целого
+# print(round(4.4678,2)) #Округлить до 2 знаков после запятой
+# print(round(4.5,)) # Банковское округление в сторону четного числа
+# print(round(5.5,))
+# print(round(3.5,))
+#
+# # Импорт библиотеки функций math
+# print('---------')
+# math.sqrt(3)
+# print(math.ceil(5.7))
+# print(math.ceil(5.2))
+# print(math.floor(5.8))
+# print(math.floor(5.2))
+#
+# print(math.log(2))
 
-a = -1 #Functiot abs
-print(abs(a)) # Модуль числа
+#                                          Практика 11.05.2025
 
-print(pow(2,10)) # Возведение в степень и нахождение остатка
-print(pow(5,2))
-print(pow(5,-5))
-print(pow(5,2,5))
+#                                              Задание 1
+# num = int(input('Введите день недели'))
+# days = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье']
+#
+# if 1 <= num <= 7:
+#     print(days[num - 1])
+# else:
+#     print("Ошибка: число должно быть от 1 до 7")
+#
+#                                                 #  Задание 2
+# num = int(input('Введите число:'))
+# if num % 2 == 0:
+#     print("Число является чётным")
+# else:
+#     print("Число не является чётным")
+#                                                    #  Задание 3
+# num = int(input('Введите любое число'))
+# abs_num = abs(num)
+#
+# if abs_num < 10:
+#     print("Число однозначное")
+# elif abs_num < 100:
+#     print("Число двузначное")
+# elif abs_num < 1000:
+#     print("Число трёхзначное")
+# else:
+#     print("Число не относится к диапазону")
+#                                                       #  Задание 4
+# age = int(input('Введите свой возраст:'))
+# if age >= 18:
+#     print("Вам можно голосовать")
+# else:
+#     print("Вам нельзя голосовать")
+                                                       #  Задание 5
+# num1 = int(input('число1:'))
+# num2 = int(input('число2:'))
+# num3 = int(input('число3:'))
+# print(max(num1, num2, num3))
+# #                                                      gЗадание 6
+# a = int(input('число a:'))
+# b = int(input('число b:'))
+# c = int(input('число c:'))
+# if a == b or a == c or b == c:
+#     print("Среди чисел есть одинаковые")
+# else:
+#     print("Все числа различны")
 
-print(round(1.3,4))  #Округлить до целого
-print(round(4.4678,2)) #Округлить до 2 знаков после запятой
-print(round(4.5,)) # Банковское округление в сторону четного числа
-print(round(5.5,))
-print(round(3.5,))
-
-# Импорт библиотеки функций math
-print('---------')
-math.sqrt(3)
-print(math.ceil(5.7))
-print(math.ceil(5.2))
-print(math.floor(5.8))
-print(math.floor(5.2))
-
-print(math.log(2))
+#                                                     Задание 6
+d = int(input('число a:'))
+f = int(input('число b:'))
+g = int(input('число c:'))
+numbers = [d, f, g]
+numbers.sort()
+print(''.join(map(str, numbers)))
