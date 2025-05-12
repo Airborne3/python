@@ -266,7 +266,7 @@ import math
 # num2 = int(input('число2:'))
 # num3 = int(input('число3:'))
 # print(max(num1, num2, num3))
-# #                                                      gЗадание 6
+# #                                                      Задание 6
 # a = int(input('число a:'))
 # b = int(input('число b:'))
 # c = int(input('число c:'))
