@@ -275,10 +275,3 @@ import math
 # else:
 #     print("Все числа различны")
 
-#                                                     Задание 6
-d = int(input('число a:'))
-f = int(input('число b:'))
-g = int(input('число c:'))
-numbers = [d, f, g]
-numbers.sort()
-print(''.join(map(str, numbers)))

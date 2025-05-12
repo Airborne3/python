@@ -37,8 +37,58 @@
 # person = { "name": you_name, "age": you_age,"любит программировать": du_you_likes_programming }
 
 #                                            ''' Домашнее задание за 10.05.25 '''
-number = int(input('Введите число'))
-if -9 < number < 2:
-    print("Число принадлежит интервалу (-9; 2)")
+# number = int(input('Введите число'))
+# if -9 < number < 2:
+#     print("Число принадлежит интервалу (-9; 2)")
+# else:
+#     print("Число не принадлежит интервалу (-9; 2)")
+
+#                                         ''' Домашнее задание за 11.05.25 '''
+#                                                  Задания с 7 по 10
+
+                                                     # Задание 7
+d = int(input('число a:'))
+f = int(input('число b:'))
+g = int(input('число c:'))
+numbers = [d, f, g]
+numbers.sort()
+print(''.join(map(str, numbers)))
+
+                                                    # Задание 8
+# Сложно не понимаю
+
+
+
+
+
+
+
+
+                                                      #Задание 9
+import calendar
+year = int(input("Введите год: "))
+month = int(input("Введите номер месяца (1-12): "))
+
+days_in_month = calendar.monthrange(year, month)[1]
+
+print(f"В {month} месяце {year} года — {days_in_month} дней.")
+
+                                                       #Задание 10
+
+age = int(input("Введите возраст посетителя: "))
+time = input("Введите время сеанса в формате ЧЧ:ММ: ")
+
+hours, minutes = map(int, time.split(":"))
+time_in_hours = hours + minutes / 60
+
+if age < 3:
+    price = 0
+elif 3 <= age <= 12:
+    price = 10
 else:
-    print("Число не принадлежит интервалу (-9; 2)")
+    price = 15
+
+if time_in_hours <= 12:
+    price *= 0.8
+
+print(f"Стоимость билета: ${price:.2f}")
