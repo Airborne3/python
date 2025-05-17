@@ -56,12 +56,37 @@ print(''.join(map(str, numbers)))
 
                                                     # Задание 8
 # Сложно не понимаю
+sales = []
+for i in range(3):
+    sale = float(input(f"Введите объем продаж для менеджера {i+1}: "))
+    sales.append(sale)
 
+def calculate_salary(sales_amount):
+    if sales_amount <= 500:
+        bonus = sales_amount * 0.03
+    elif sales_amount <= 1000:
+        bonus = sales_amount * 0.05
+    else:
+        bonus = sales_amount * 0.08
+    return 200 + bonus
 
+salaries = [calculate_salary(s) for s in sales]
 
+max_sales = max(sales)
+best_indices = [i for i, s in enumerate(sales) if s == max_sales]
 
+if len(best_indices) == 1:
+    best_index = best_indices[0]
+    salaries[best_index] += 200
 
+print("\nИтоговые зарплаты:")
+for i in range(3):
+    print(f"Менеджер {i+1}: ${salaries[i]:.2f} (продажи: ${sales[i]:.2f})")
 
+if len(best_indices) == 1:
+    print(f"\nЛучший менеджер: Менеджер {best_index + 1}, ему начислена премия 200$.")
+else:
+    print("\nНесколько лидеров или нет явного лучшего. Премия не начисляется.")
 
 
                                                       #Задание 9
@@ -90,5 +115,5 @@ else:
 
 if time_in_hours <= 12:
     price *= 0.8
+print(f'Стоимость билета: ${price:.2f}hours')
 
-print(f"Стоимость билета: ${price:.2f}")
