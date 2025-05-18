@@ -276,10 +276,70 @@ import math
 #     print("Все числа различны")
 
 #                                              Практика за 17.05.2025
-n= 5
-while n<10:
-    print('цикл работает')
-    n += 1
-    if n==1:
-        continue
-    print('Цикл закончился')
+# n= 5
+# while n<10:
+#     print('цикл работает')
+#     n += 1
+#     if n==1:
+#         continue
+#     print('Цикл закончился')
+
+#                                              Практика за 18.05.2025
+# for x in range (2, 6 ):
+#     print(x)
+# print('---------')
+# for x in range(5,50,5):
+#     print(x)
+#
+# for x,y in enumerate( ['1','2','3']):
+#     print(x, '=', y)
+#
+# ajt=['желтый','синий','зеленый']
+# fruits=['банан','цветок','лист']
+# for x in ajt:
+#     for y in fruits:
+#         print((x,y))
+#
+#  # Задача1
+# for number in range(2, 51, 2):
+#     print(number)
+#
+# # Задача2
+# n = 100
+# sum = n * (n + 1) // 2
+# print("Сумма чисел от 1 до 100 равна:", sum)
+#
+# # Задача3
+# def является_простым(n):
+#     if n <= 1:
+#         return False
+#     if n == 2:
+#         return True
+#     if n % 2 == 0:
+#         return False
+#
+#     for i in range(3, int(n**0.5) + 1, 2):
+#         if n % i == 0:
+#             return False
+#     return True
+#
+# try:
+#     число = int(input("Введите число: "))
+#     if является_простым(число):
+#         print(f"Число {число} является простым.")
+#     else:
+#         print(f"Число {число} НЕ является простым.")
+# except ValueError:
+#     print("Ошибка: введите корректное целое число.")
+
+# # Задача4
+
+n = int(input('введите число'))
+result = 1
+for i in range (2, n + 1):
+    result *= i
+    print(result)
+
+
+
+

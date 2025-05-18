@@ -116,4 +116,6 @@ else:
 if time_in_hours <= 12:
     price *= 0.8
 print(f'Стоимость билета: ${price:.2f}hours')
+#                                              Практика за 18.05.2025 дз
 
+                                                        # Задача5
