@@ -334,11 +334,24 @@ import math
 
 # # Задача4
 
-n = int(input('введите число'))
-result = 1
-for i in range (2, n + 1):
-    result *= i
-    print(result)
+# n = int(input('введите число'))
+# result = 1
+# for i in range (2, n + 1):
+#     result *= i
+#     print(result)
+
+#                                                Практика за 24.05.25
+
+#                                                  Задача 10
+
+number =[3,-6,10,0,-3,5,-7]
+result =[]
+for i in number:
+    if abs(i)>5:
+        result.append(i)
+print(result)
+#                                                   Задача 11
+
 
 
 
