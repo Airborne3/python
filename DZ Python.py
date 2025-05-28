@@ -173,3 +173,20 @@
 #     for j in range(1, 11):
 #         print(f"{i * j:3}", end=" ")
 #     print()
+
+#                                          Дз 24.05.2025
+# Задача 11
+letters = 'ЫгВЫоЯСремДШНККАыкЩЙФа'
+cleaned = ''.join([char for char in letters if not char.isupper()])
+print(cleaned)
+
+#Задача 12
+
+secret_list = ["Мавпродош", "Лорнектиф", "Древерол", "Фиригарпиг", "Клодобродыч"]
+
+nickname = input("Введите ваш никнейм: ")
+
+if nickname in secret_list:
+    print(f"Ты – свой. Приветствую, любезный {nickname}!")
+else:
+    print("Тут ничего нет. Еще есть вопросы?")
