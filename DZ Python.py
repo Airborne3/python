@@ -190,3 +190,5 @@ if nickname in secret_list:
     print(f"Ты – свой. Приветствую, любезный {nickname}!")
 else:
     print("Тут ничего нет. Еще есть вопросы?")
+
+
