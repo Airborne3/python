@@ -352,75 +352,103 @@ import math
 # print(result)
 
 #                                                 Практика за 31.05.25
-string = 'Привет мир как у тебя дела? , Все хорошо!'
-print (string.startswith('Привет мир'))
-print (string.endswith('Привет мир'))
-print (string.find('мир'))
-print (string.find('м'))
-print (string.find('Привет'))
-print (string.find('е',1,7))
-print (string.find('е',1))
-print (string.replace('мир','россия'))
-print (string.replace('мир','россия'))
+# string = 'Привет мир как у тебя дела? , Все хорошо!'
+# print (string.startswith('Привет мир'))
+# print (string.endswith('Привет мир'))
+# print (string.find('мир'))
+# print (string.find('м'))
+# print (string.find('Привет'))
+# print (string.find('е',1,7))
+# print (string.find('е',1))
+# print (string.replace('мир','россия'))
+# print (string.replace('мир','россия'))
+#
+# #                                            Задача 1
+# user_input = input("Введите строку: ")
+# reversed_string = user_input[::-1]
+# print("Обратная строка:", reversed_string)
+# #                                            Задача 2
+# def are_anagrams(str1, str2):
+#     str1 = str1.replace(" ", "").lower()
+#     str2 = str2.replace(" ", "").lower()
+#
+#     return sorted(str1) == sorted(str2)
+#
+# string1 = input("Введите первую строку: ")
+# string2 = input("Введите вторую строку: ")
+#
+# if are_anagrams(string1, string2):
+#     print("Строки являются анаграммами.")
+# else:
+#     print("Строки не являются анаграммами.")
+# #                                            Задача 3
+# text = input("Введите строку: ").lower()
+# vowels = set('аеёиоуыэюя')
+# vowel_count = 0
+# consonant_count = 0
+# for char in text:
+#     if char in vowels:
+#         vowel_count += 1
+#     elif char.isalpha():
+#         consonant_count += 1
+# print(f"Количество гласных букв: {vowel_count}")
+# print(f"Количество согласных букв: {consonant_count}")
+# #                                            Задача 4
+# text = input("Введите строку: ").lower()
+# cleaned_text = ''.join(char for char in text if char.isalnum())
+# if cleaned_text == cleaned_text[::-1]:
+#     print("Это палиндром!")
+# else:
+#     print("Это не палиндром.")
+# #                                            Задача 5
+# from itertools import permutations
+# text = input("Введите строку: ")
+# unique_perms = set(permutations(text))
+# print("Все уникальные перестановки символов:")
+# for p in unique_perms:
+#     print(''.join(p))
+# #                                            Задача 6
+# text = input("Введите строку: ")
+# text_without_spaces = text.replace(' ', '')
+# print("Строка без пробелов:", text_without_spaces)
 
-#                                            Задача 1
-user_input = input("Введите строку: ")
-reversed_string = user_input[::-1]
-print("Обратная строка:", reversed_string)
-#                                            Задача 2
-def are_anagrams(str1, str2):
-    str1 = str1.replace(" ", "").lower()
-    str2 = str2.replace(" ", "").lower()
+#                                       Практика за 01.06.25
+# #                                            Задача 7
+# text = input("Введите строку: ")
+# words = text.split()
+# if words:
+#     longest_word = max(words, key=len)
+#     print("Самое длинное слово:", longest_word)
+# else:
+#     print("Нет ни одного слова.")
+#
+# #                                            Задача 8
+# import re
+# text = input("Введите исходную строку: ")
+# old_word = input("Какое слово нужно заменить? ")
+# new_word = input("На какое слово заменить? ")
+# new_text = re.sub(re.escape(old_word), new_word, text, flags=re.IGNORECASE)
+# print("Изменённая строка:", new_text)
+# #                                            Задача 9
+# text = input("Введите строку: ").lower()
+# alphabet = set('абвгдеёжзийклмнопрстуфхцчшщъыьэюя')
+# letters_in_text = set(char for char in text if char in alphabet)
+# if letters_in_text >= alphabet:
+#     print("Это панграмма!")
+# else:
+#     print("Это не панграмма.")
 
-    return sorted(str1) == sorted(str2)
+#                                            Задача 10
+# text = input("Введите строку: ")
+# capitalized_text = ' '.join(word.capitalize() for word in text.split())
+# print("Преобразованная строка:", capitalized_text)
 
-string1 = input("Введите первую строку: ")
-string2 = input("Введите вторую строку: ")
+alphabet = 'абвгдеёжзийклмнопрстуфхцчшщЪЫЬэюя'
 
-if are_anagrams(string1, string2):
-    print("Строки являются анаграммами.")
-else:
-    print("Строки не являются анаграммами.")
-#                                            Задача 3
-text = input("Введите строку: ").lower()
-vowels = set('аеёиоуыэюя')
-vowel_count = 0
-consonant_count = 0
-for char in text:
-    if char in vowels:
-        vowel_count += 1
-    elif char.isalpha():
-        consonant_count += 1
-print(f"Количество гласных букв: {vowel_count}")
-print(f"Количество согласных букв: {consonant_count}")
-#                                            Задача 4
-text = input("Введите строку: ").lower()
-cleaned_text = ''.join(char for char in text if char.isalnum())
-if cleaned_text == cleaned_text[::-1]:
-    print("Это палиндром!")
-else:
-    print("Это не палиндром.")
-#                                            Задача 5
-from itertools import permutations
-text = input("Введите строку: ")
-unique_perms = set(permutations(text))
-print("Все уникальные перестановки символов:")
-for p in unique_perms:
-    print(''.join(p))
-#                                            Задача 6
-text = input("Введите строку: ")
-text_without_spaces = text.replace(' ', '')
-print("Строка без пробелов:", text_without_spaces)
-#                                            Задача 7
-text = input("Введите строку: ")
-words = text.split()
-if words:
-    longest_word = max(words, key=len)
-    print("Самое длинное слово:", longest_word)
-else:
-    print("Нет ни одного слова.")
-    #                                            Задача 8
-
-    #                                            Задача 9
-
-    #                                            Задача 10
+for position in range(11):
+    print('^'*27)
+    for letter in alphabet:
+        if alphabet.index(letter) % 11 == position:
+            print(' |', letter.upper(),letter,' |',end='' )
+    print()
+print('^'*27)
