@@ -191,5 +191,47 @@ if nickname in secret_list:
 else:
     print("Тут ничего нет. Еще есть вопросы?")
 
+#                                          Дз 31.05.2025
+#                                             Задача 6
+# text = input("Введите строку: ")
+# text_without_spaces = text.replace(' ', '')
+# print("Строка без пробелов:", text_without_spaces)
 
+#                                             Задача 7
+# text = input("Введите строку: ")
+# words = text.split()
+# if words:
+#     longest_word = max(words, key=len)
+#     print("Самое длинное слово:", longest_word)
+# else:
+#     print("Нет ни одного слова.")
 #                                          Дз 01.06.2025
+
+text = input("Введите текст: ")
+vowels = set('аеёиоуыэюяАЕЁИОУЫЭЮЯ')
+vowel_count = 0
+consonant_count = 0
+for char in text:
+    if char.isalpha():
+        if char in vowels:
+            vowel_count += 1
+        else:
+            consonant_count += 1
+words = text.split()
+longest_word = ''
+max_length = 0
+for word in words:
+    cleaned_word = ''.join(c for c in word if c.isalpha())
+    if len(cleaned_word) > max_length:
+        max_length = len(cleaned_word)
+        longest_word = cleaned_word
+search_word = input("Введите слово для поиска: ").lower()
+word_count = 0
+for word in words:
+    cleaned_word = ''.join(c for c in word if c.isalpha()).lower()
+    if cleaned_word == search_word:
+        word_count += 1
+print(f"Гласных букв: {vowel_count}")
+print(f"Согласных букв: {consonant_count}")
+print(f"Самое длинное слово: {longest_word}")
+print(f"Слово '{search_word}' встречается: {word_count} раз(а)")
