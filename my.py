@@ -452,3 +452,21 @@ for position in range(11):
             print(' |', letter.upper(),letter,' |',end='' )
     print()
 print('^'*27)
+
+
+#                                                            Практика за 07.06.25
+#                                                             Задача 14
+
+import math
+def get_divisors(n):
+    divisors = set()
+    for i in range(1, int(math.isqrt(n)) + 1):
+        if n % i == 0:
+            divisors.add(i)
+            divisors.add(n // i)
+    return sorted(divisors)
+numbers = [23436, 190187200, 380457890232]
+for num in numbers:
+    print(f"Делители числа {num}:")
+    print(get_divisors(num))
+    print("-" * 40)
