@@ -441,32 +441,65 @@ import math
 #                                            Задача 10
 # text = input("Введите строку: ")
 # capitalized_text = ' '.join(word.capitalize() for word in text.split())
-# print("Преобразованная строка:", capitalized_text)
+# # print("Преобразованная строка:", capitalized_text)
+#
+# alphabet = 'абвгдеёжзийклмнопрстуфхцчшщЪЫЬэюя'
+#
+# for position in range(11):
+#     print('^'*27)
+#     for letter in alphabet:
+#         if alphabet.index(letter) % 11 == position:
+#             print(' |', letter.upper(),letter,' |',end='' )
+#     print()
+# print('^'*27)
+#
+#
+# #                                                            Практика за 07.06.25
+# #                                                             Задача 14
+#
+# import math
+# def get_divisors(n):
+#     divisors = set()
+#     for i in range(1, int(math.isqrt(n)) + 1):
+#         if n % i == 0:
+#             divisors.add(i)
+#             divisors.add(n // i)
+#     return sorted(divisors)
+# numbers = [23436, 190187200, 380457890232]
+# for num in numbers:
+#     print(f"Делители числа {num}:")
+#     print(get_divisors(num))
+#     print("-" * 40)
 
-alphabet = 'абвгдеёжзийклмнопрстуфхцчшщЪЫЬэюя'
+ #                                                            Практика за 08.06.25
+#
+# def print_number_as_dashes():
+#     try:
+#         n = int(input("Введите число: "))
+#         if n < 0:
+#             print("Ошибка: введите положительное число.")
+#             return
+#
+#         half = n // 2
+#         rest = n - half
+#
+#         print('-' * half)
+#         print('-' * rest)
+#
+#     except ValueError:
+#         print("Ошибка: введите корректное целое число.")
+# print_number_as_dashes()
 
-for position in range(11):
-    print('^'*27)
-    for letter in alphabet:
-        if alphabet.index(letter) % 11 == position:
-            print(' |', letter.upper(),letter,' |',end='' )
-    print()
-print('^'*27)
+# def print_rengtangle(n):
+#     for _ in range (3):
+#         print('-'*8)
+#
+# n = int(input('Введите ширину прямоугольника '))
+# print_rengtangle(n)
 
+def print_triangle(n):
+    for i in range(1,n+1):
+        print('*' * i )
 
-#                                                            Практика за 07.06.25
-#                                                             Задача 14
-
-import math
-def get_divisors(n):
-    divisors = set()
-    for i in range(1, int(math.isqrt(n)) + 1):
-        if n % i == 0:
-            divisors.add(i)
-            divisors.add(n // i)
-    return sorted(divisors)
-numbers = [23436, 190187200, 380457890232]
-for num in numbers:
-    print(f"Делители числа {num}:")
-    print(get_divisors(num))
-    print("-" * 40)
+n = int(input('Введите ширину прямоугольника '))
+print_triangle(n)
