@@ -236,15 +236,65 @@
 # print(f"Самое длинное слово: {longest_word}")
 # print(f"Слово '{search_word}' встречается: {word_count} раз(а)")
 
-#                                              Дз 01.06.2025
+#                                              Дз 07.06.2025
 
 #                                             Задача 4
-
-
-
+# def average(*args: int) -> float:
+#     return sum(args) / len(args)
+# try:
+#     numbers = list(map(int, input("Введите 5 целых чисел через пробел: ").split()))
+#     if len(numbers) != 5:
+#         print("Ошибка: должно быть ровно 5 чисел.")
+#     else:
+#         result = average(*numbers)
+#         print(f"Среднее арифметическое: {result:.2f}")
+# except ValueError:
+#     print("Ошибка: введите корректные целые числа.")
 
 #                                             Задача 5
-
-
+# def count_digits(n: int) -> int:
+#     """
+#     Возвращает количество цифр в десятичной записи целого числа.
+#     """
+#     return len(str(abs(n)))
+# try:
+#     number = int(input("Введите целое число: "))
+#     result = count_digits(number)
+#     print(f"Количество цифр в числе {number}: {result}")
+# except ValueError:
+#     print("Ошибка: введите корректное целое число.")
 
 #                                             Задача 7
+# import math
+# def distance(p1, p2):
+#     x1, y1 = p1
+#     x2, y2 = p2
+#     return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+# print("Введите координаты трёх вершин треугольника (по две координаты на точку):")
+# x1 = float(input("Координата x точки A: "))
+# y1 = float(input("Координата y точки A: "))
+# x2 = float(input("Координата x точки B: "))
+# y2 = float(input("Координата y точки B: "))
+# x3 = float(input("Координата x точки C: "))
+# y3 = float(input("Координата y точки C: "))
+# A = (x1, y1)
+# B = (x2, y2)
+# C = (x3, y3)
+# ab = distance(A, B)
+# bc = distance(B, C)
+# ca = distance(C, A)
+# perimeter = ab + bc + ca
+# print(f"\nДлина AB: {ab:.2f}")
+# print(f"Длина BC: {bc:.2f}")
+# print(f"Длина CA: {ca:.2f}")
+# print(f"Периметр треугольника: {perimeter:.2f}")
+
+#                                              Дз 08.06.2025
+
+# def greet_and_count(user_name: str) -> None:
+#     print(f"Привет, {user_name}! Добро пожаловать!")
+#     filtered_name = user_name.replace(' ', '')
+#     char_count = len(filtered_name)
+#     print(f"Количество символов в вашем имени без учета пробелов: {char_count}")
+# name = input("Введите ваше имя: ")
+# greet_and_count(name)

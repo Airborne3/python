@@ -497,9 +497,13 @@ import math
 # n = int(input('Введите ширину прямоугольника '))
 # print_rengtangle(n)
 
-def print_triangle(n):
-    for i in range(1,n+1):
-        print('*' * i )
+# def print_triangle(n):
+#     for i in range(1,n+1):
+#         print('*' * i )
+#
+# n = int(input('Введите ширину прямоугольника '))
+# print_triangle(n)
 
-n = int(input('Введите ширину прямоугольника '))
-print_triangle(n)
+#                                                            Практика за 14.06.25
+
+#                                                              Задача 8
