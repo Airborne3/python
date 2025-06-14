@@ -507,3 +507,40 @@ import math
 #                                                            Практика за 14.06.25
 
 #                                                              Задача 8
+# def is_prime(n):
+#     if n<2: return False
+#     for i in range(2,int(n**0.5)+1):
+#         if n % i == 0:
+#             return False
+#     return True
+# primes = [i for i in]
+# Primes=[]
+# for i in range(100, 1000):
+#     if is_prime(i):
+#     primes.append(i)
+# print(primes)
+#                                                              Задача 9
+# number = input("Введите шестизначное число: ")
+# if len(number) != 6 or not number.isdigit():
+#     print("Ошибка: Введите корректное шестизначное число (без пробелов и букв).")
+# else:
+#     first_sum = sum(int(digit) for digit in number[:3])
+#     second_sum = sum(int(digit) for digit in number[3:])
+#     if first_sum == second_sum:
+#         print(f"Число {number} — счастливое3")
+#     else:
+#         print(f"Число {number} не счастливое(.")
+
+ #                                                              Задача 10
+input_str = input("Введите 6 различных целых чисел через пробел: ")
+try:
+    numbers = list(map(int, input_str.split()))
+    if len(numbers) != 6:
+        print("Ошибка: должно быть ровно 6 чисел.")
+    elif len(set(numbers)) != 6:
+        print("Ошибка: все числа должны быть различными.")
+    else:
+        max_number = max(numbers)
+        print(f"Максимальное число: {max_number}")
+except ValueError:
+    print("Ошибка: введите корректные целые числа.")
