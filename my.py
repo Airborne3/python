@@ -532,15 +532,59 @@ import math
 #         print(f"Число {number} не счастливое(.")
 
  #                                                              Задача 10
-input_str = input("Введите 6 различных целых чисел через пробел: ")
-try:
-    numbers = list(map(int, input_str.split()))
-    if len(numbers) != 6:
-        print("Ошибка: должно быть ровно 6 чисел.")
-    elif len(set(numbers)) != 6:
-        print("Ошибка: все числа должны быть различными.")
-    else:
-        max_number = max(numbers)
-        print(f"Максимальное число: {max_number}")
-except ValueError:
-    print("Ошибка: введите корректные целые числа.")
+# input_str = input("Введите 6 различных целых чисел через пробел: ")
+# try:
+#     numbers = list(map(int, input_str.split()))
+#     if len(numbers) != 6:
+#         print("Ошибка: должно быть ровно 6 чисел.")
+#     elif len(set(numbers)) != 6:
+#         print("Ошибка: все числа должны быть различными.")
+#     else:
+#         max_number = max(numbers)
+#         print(f"Максимальное число: {max_number}")
+# except ValueError:
+#     print("Ошибка: введите корректные целые числа.")
+#
+#     #                                                              Задача 14
+#     import math
+#     def area_circle(radius):
+#         return math.pi * radius ** 2
+#     def area_rectangle(length, width):
+#         return length * width
+#     def main():
+#         print("Выберите фигуру для вычисления площади:")
+#         print("1 - Круг")
+#         print("2 - Прямоугольник")
+#         choice = input("Введите номер фигуры (1 или 2): ")
+#         if choice == '1':
+#             radius = float(input("Введите радиус круга: "))
+#             print(f"Площадь круга с радиусом {radius} равна: {area_circle(radius)}")
+#         elif choice == '2':
+#             length = float(input("Введите длину прямоугольника: "))
+#             width = float(input("Введите ширину прямоугольника: "))
+#             print(f"Площадь прямоугольника с длиной {length} и шириной {width} равна: {area_rectangle(length, width)}")
+#         else:
+#             print("Неверный выбор. Пожалуйста, введите 1 или 2.")
+#
+#     if __name__ == "__main__":
+#         main()
+#                                                                  Задача 16
+def draw_square(n, s):
+    for i in range(n):
+        print(s * n)
+def main():
+    try:
+        n = int(input("Введите размер стороны квадрата: "))
+        s = input("Введите символ для рисования квадрата: ")
+
+        if len(s) != 1:
+            print("Ошибка: нужно ввести ровно один символ!")
+        elif n <= 0:
+            print("Ошибка: размер квадрата должен быть положительным числом.")
+        else:
+            draw_square(n, s)
+    except ValueError:
+        print("Ошибка: размер квадрата должен быть целым числом.")
+if __name__ == "__main__":
+    main()
+#                                                                Задача 17
