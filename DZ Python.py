@@ -298,3 +298,135 @@
 #     print(f"Количество символов в вашем имени без учета пробелов: {char_count}")
 # name = input("Введите ваше имя: ")
 # greet_and_count(name)
+
+#                                             Дз от 14.06.2025
+#                                              Задача 11
+# def swap(x, y):
+#     return y, x
+# a = 10
+# b = 20
+# c = 30
+# d = 40
+# print("До обмена:")
+# print(f"a = {a}, b = {b}")
+# print(f"c = {c}, d = {d}")
+# a, b = swap(a, b)
+# c, d = swap(c, d)
+# print("\nПосле обмена:")
+# print(f"a = {a}, b = {b}")
+# print(f"c = {c}, d = {d}")
+#                                               Задача 12
+# import math
+#
+# def is_triangle(a, b, c):
+#     return a + b > c and a + c > b and b + c > a
+# def area(a, b, c):
+#     p = (a + b + c) / 2
+#     return math.sqrt(p * (p - a) * (p - b) * (p - c))
+# print("Введите стороны первого треугольника:")
+# a1 = float(input("Сторона a: "))
+# b1 = float(input("Сторона b: "))
+# c1 = float(input("Сторона c: "))
+# print("\nВведите стороны второго треугольника:")
+# a2 = float(input("Сторона a: "))
+# b2 = float(input("Сторона b: "))
+# c2 = float(input("Сторона c: "))
+# if not is_triangle(a1, b1, c1):
+#     print("\nОшибка: Первый треугольник не существует.")
+# elif not is_triangle(a2, b2, c2):
+#     print("\nОшибка: Второй треугольник не существует.")
+# else:
+#     perimeter1 = a1 + b1 + c1
+#     perimeter2 = a2 + b2 + c2
+#     total_perimeter = perimeter1 + perimeter2
+#     area1 = area(a1, b1, c1)
+#     area2 = area(a2, b2, c2)
+#     total_area = area1 + area2
+#     print(f"\nПериметр первого треугольника: {perimeter1}")
+#     print(f"Площадь первого треугольника: {area1:.2f}")
+#
+#     print(f"\nПериметр второго треугольника: {perimeter2}")
+#     print(f"Площадь второго треугольника: {area2:.2f}")
+#
+#     print(f"\nСумма периметров: {total_perimeter}")
+#     print(f"Сумма площадей: {total_area:.2f}")
+
+#                                             Дз от 15.06.2025
+
+#                                              Задача 19
+def pointInTriangle(x, y, x1, y1, x2, y2, x3, y3):
+    def cross_product(ax, ay, bx, by, px, py):
+        return (bx - ax) * (py - ay) - (by - ay) * (px - ax)
+    cp1 = cross_product(x1, y1, x2, y2, x, y)
+    cp2 = cross_product(x2, y2, x3, y3, x, y)
+    cp3 = cross_product(x3, y3, x1, y1, x, y)
+    same_sign_positive = cp1 >= 0 and cp2 >= 0 and cp3 >= 0
+    same_sign_negative = cp1 <= 0 and cp2 <= 0 and cp3 <= 0
+
+    return same_sign_positive or same_sign_negative
+print("Введите координаты точки:")
+x_p = float(input("Координата x точки: "))
+y_p = float(input("Координата y точки: "))
+print("\nВведите координаты вершин треугольника:")
+print("Вершина A:")
+x_a = float(input("x A: "))
+y_a = float(input("y A: "))
+print("Вершина B:")
+x_b = float(input("x B: "))
+y_b = float(input("y B: "))
+print("Вершина C:")
+x_c = float(input("x C: "))
+y_c = float(input("y C: "))
+
+result = pointInTriangle(x_p, y_p, x_a, y_a, x_b, y_b, x_c, y_c)
+print(f"\nТочка ({x_p}, {y_p}) находится внутри треугольника ABC — {result}")
+
+#                                              Задача 20
+
+def pointInTriangle(x, y, x1, y1, x2, y2, x3, y3):
+    def cross_product(ax, ay, bx, by, cx, cy):
+        return (bx - ax) * (cy - ay) - (by - ay) * (cx - ax)
+    cp1 = cross_product(x1, y1, x2, y2, x, y)
+    cp2 = cross_product(x2, y2, x3, y3, x, y)
+    cp3 = cross_product(x3, y3, x1, y1, x, y)
+    has_same_sign = (cp1 >= 0 and cp2 >= 0 and cp3 >= 0) or (cp1 <= 0 and cp2 <= 0 and cp3 <= 0)
+    return has_same_sign
+print("Введите координаты точки:")
+x = float(input("Координата x: "))
+y = float(input("Координата y: "))
+print("\nВведите координаты трёх вершин треугольника:")
+print("Вершина A:")
+x1 = float(input("x1: "))
+y1 = float(input("y1: "))
+print("Вершина B:")
+x2 = float(input("x2: "))
+y2 = float(input("y2: "))
+print("Вершина C:")
+x3 = float(input("x3: "))
+y3 = float(input("y3: "))
+result = pointInTriangle(x, y, x1, y1, x2, y2, x3, y3)
+print("\nРезультат:", result)
+
+#                                              Задача 21
+
+def calculate_score(score1, score2, score3, score4, score5):
+    scores = [score1, score2, score3, score4, score5]
+    scores_sorted = sorted(scores)
+    middle_scores = scores_sorted[1:-1]
+    average = sum(middle_scores) / len(middle_scores)
+    return average
+print("Введите оценки пяти экспертов (целое число от 0 до 100):")
+scores = []
+for i in range(5):
+    while True:
+        try:
+            score = int(input(f"Оценка эксперта {i + 1}: "))
+            if 0 <= score <= 100:
+                scores.append(score)
+                break
+            else:
+                print("Ошибка! Число должно быть от 0 до 100.")
+        except ValueError:
+            print("Ошибка! Введите целое число.")
+final_score = calculate_score(*scores)
+print("\nИтоговая оценка спортсмена:", round(final_score, 2))
