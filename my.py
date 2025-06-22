@@ -1,4 +1,6 @@
 import math
+from tkinter.font import names
+
 
 #                                                  """ 1 занятие по Python """
 # from typing import final
@@ -569,22 +571,100 @@ import math
 #     if __name__ == "__main__":
 #         main()
 #                                                                  Задача 16
-def draw_square(n, s):
-    for i in range(n):
-        print(s * n)
-def main():
-    try:
-        n = int(input("Введите размер стороны квадрата: "))
-        s = input("Введите символ для рисования квадрата: ")
-
-        if len(s) != 1:
-            print("Ошибка: нужно ввести ровно один символ!")
-        elif n <= 0:
-            print("Ошибка: размер квадрата должен быть положительным числом.")
-        else:
-            draw_square(n, s)
-    except ValueError:
-        print("Ошибка: размер квадрата должен быть целым числом.")
-if __name__ == "__main__":
-    main()
+# def draw_square(n, s):
+#     for i in range(n):
+#         print(s * n)
+# def main():
+#     try:
+#         n = int(input("Введите размер стороны квадрата: "))
+#         s = input("Введите символ для рисования квадрата: ")
+#
+#         if len(s) != 1:
+#             print("Ошибка: нужно ввести ровно один символ!")
+#         elif n <= 0:
+#             print("Ошибка: размер квадрата должен быть положительным числом.")
+#         else:
+#             draw_square(n, s)
+#     except ValueError:
+#         print("Ошибка: размер квадрата должен быть целым числом.")
+# if __name__ == "__main__":
+#     main()
 #                                                                Задача 17
+
+class Contact:
+    def __init__(self,name ,phone,email):
+        self.name=name
+        self.phone=phone
+        self.email=email
+    def __str__(self):
+            return  f"Имя:{self.name} |Телефон: {self.phone} | Email:{self.email}"
+
+class ContactManager:
+
+    def __init__(self):
+        self.contacts=[]
+
+    def add_contact(self, contact):
+        self.contacts.append(contact)
+        print(f'Контакт"{contact.name}"Добавлен')
+
+    def remove_contact(self,name):
+        for contact in self.contacts:
+            if contact.name.lover()==name.lover():
+                self.contacts.remove(contact)
+                print(f"Контакт:'{name}'Удален")
+                return
+        print(f"Контакт с '{name}'не найден")
+
+    def find_contact(self, name):
+        for contact in self.contacts:
+            if contact.name.lover()==name.lover():
+                print(f"Контакт найден:")
+                print(contact)
+                return
+        print(f"Контакт с '{name}'не найден")
+
+
+    def show_contacts(self):
+        print("\n Ваш список контактов:")
+        for contact in self.contacts:
+            print(contact)
+        if not self.contacts:
+            print("Список контактов пуст. Добавьте первый контакт")
+
+def main():
+    manager = ContactManager()
+    while True:
+        print('\n __Меню__')
+        print('1.Добавить контакт')
+        print('2.Удалить контакт')
+        print('3.Найти контакт')
+        print('4.Показать все контакты')
+        print('5.Выйти из программы')
+
+        choice = input("Выберете пункт меню(1-5):")
+        if choice =="1":
+            name = input("Имя: ")
+            phone = input('Телефон: ')
+            email = input("Почта: ")
+            manager.add_contact(Contact(name,phone,email))
+
+        elif choice == "2":
+            name = input("Введите имя для удаления:")
+            manager.remove_contact(name)
+
+        elif choice == "3":
+            name = input("Введите имя для поиска:")
+            manager.find_contact(name)
+
+        elif choice == "4":
+            manager.show_contacts()
+
+        elif choice == "5":
+            print("Выход из программы ")
+            break
+        else:
+            print("Неверный выбор в меню.Введите число от 1 до 5")
+main()
+contact1 = Contact("Иванов Иван","3456830549","ivanov@test.ru")
+print(contact1)
