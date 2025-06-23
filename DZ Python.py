@@ -433,19 +433,133 @@
 
 #                                             Дз от 21.06.2025
 #                                              Задача 21
-def fibonacci(n):
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
-    else:
-        return fibonacci(n - 1) + fibonacci(n - 2)
-try:
-    n = int(input("Введите номер числа Фибоначчи (n ≥ 0): "))
-    if n < 0:
-        print("Ошибка: Число должно быть неотрицательным.")
-    else:
-        result = fibonacci(n)
-        print(f"\nЧисло Фибоначчи под номером {n}: {result}")
-except ValueError:
-    print("Ошибка: Введите целое число.")
+# def fibonacci(n):
+#     if n == 0:
+#         return 0
+#     elif n == 1:
+#         return 1
+#     else:
+#         return fibonacci(n - 1) + fibonacci(n - 2)
+# try:
+#     n = int(input("Введите номер числа Фибоначчи (n ≥ 0): "))
+#     if n < 0:
+#         print("Ошибка: Число должно быть неотрицательным.")
+#     else:
+#         result = fibonacci(n)
+#         print(f"\nЧисло Фибоначчи под номером {n}: {result}")
+# except ValueError:
+#     print("Ошибка: Введите целое число.")
+#                                             Дз от 22.06.2025
+#                                              Задача 1
+# class Rectangle:
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+#
+#     def area(self):
+#         return self.width * self.height
+#
+#     def perimeter(self):
+#         return 2 * (self.width + self.height)
+#
+# class Square(Rectangle):
+#     def __init__(self, side):
+#         super().__init__(width=side, height=side)
+#         self.side = side
+# rect = Rectangle(5, 10)
+# print("Прямоугольник:")
+# print("Площадь:", rect.area())
+# print("Периметр:", rect.perimeter())
+# square = Square(4)
+# print("\nКвадрат:")
+# print("Площадь:", square.area())
+# print("Периметр:", square.perimeter())
+# print("Сторона квадрата:", square.side)
+
+#                                              Задача 2
+class Person:
+    def __init__(self, name, age, gender):
+        self.name = name
+        self.age = age
+        self.gender = gender
+
+    def introduce(self):
+        print(f"Имя: {self.name}")
+        print(f"Возраст: {self.age}")
+        print(f"Пол: {self.gender}")
+
+
+class Employee(Person):
+    def __init__(self, name, age, gender, salary, position):
+        super().__init__(name, age, gender)
+        self.salary = salary
+        self.position = position
+
+    def work(self):
+        print(f"{self.name} работает как {self.position} с зарплатой {self.salary}.")
+
+employees = []
+def main_menu():
+    while True:
+        print("\n===== Меню =====")
+        print("1. Добавить нового сотрудника")
+        print("2. Показать список сотрудников")
+        print("3. Удалить сотрудника")
+        print("4. Выйти")
+        choice = input("Выберите действие (1/2/3/4): ")
+
+        if choice == '1':
+            add_employee()
+        elif choice == '2':
+            show_employees()
+        elif choice == '3':
+            delete_employee()
+        elif choice == '4':
+            print("Выход из программы.")
+            break
+        else:
+            print("Ошибка: Неверный выбор. Попробуйте снова.")
+
+def add_employee():
+    print("\nВведите данные сотрудника:")
+    name = input("Имя: ")
+    age = input("Возраст: ")
+    gender = input("Пол (муж/жен): ")
+    salary = input("Зарплата: ")
+    position = input("Должность: ")
+
+    try:
+        age = int(age)
+        salary = float(salary)
+        employee = Employee(name, age, gender, salary, position)
+        employees.append(employee)
+        print(f"\nСотрудник {name} успешно добавлен.\n")
+    except ValueError:
+        print("Ошибка: Возраст и зарплата должны быть числами.\n")
+
+def show_employees():
+    if not employees:
+        print("\nСписок сотрудников пуст.")
+        return
+
+    print("\n===== Список сотрудников =====")
+    for idx, emp in enumerate(employees):
+        print(f"\nСотрудник {idx + 1}:")
+        emp.introduce()
+        emp.work()
+
+def delete_employee():
+    if not employees:
+        print("\nНет сотрудников для удаления.")
+        return
+    show_employees()
+    try:
+        number = int(input("Введите номер сотрудника для удаления: "))
+        if 1 <= number <= len(employees):
+            removed = employees.pop(number - 1)
+            print(f"\nСотрудник {removed.name} удалён.")
+        else:
+            print("Ошибка: Неверный номер.")
+    except ValueError:
+        print("Ошибка: Введите корректный номер (число).")
+main_menu()
