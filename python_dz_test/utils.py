@@ -16,7 +16,6 @@ def words_starting_with_vowel(text):
     words = text.split()
     result = []
     for word in words:
-        # Удаляем пунктуацию с начала и конца, оставляя только буквы
         clean_word = word.strip(".,!?;:\"'()[]{}")
         if clean_word and clean_word[0].lower() in vowels:
             result.append(clean_word)
