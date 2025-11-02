@@ -5,17 +5,18 @@ from pages.inventory_page import InventoryPage
 from pages.cart_page import CartPage
 
 
-def test_add_and_remove_item_from_cart_full_flow(driver):
-    BASE_URL = "https://www.saucedemo.com/v1/"
+# tests/test_cart_full_flow.py
 
+def test_add_and_remove_item_from_cart_full_flow(driver):
     login_page = LoginPage(driver)
     inventory_page = InventoryPage(driver)
     cart_page = CartPage(driver)
 
     # Шаг 1: Открыть сайт и войти
-    login_page.open(BASE_URL)
+    driver.get("https://www.saucedemo.com/v1/")
     login_page.login("standard_user", "secret_sauce")
 
+    # ... остальной код теста
     # Шаг 2: Добавить первый товар
     first_item_name = inventory_page.get_first_item_name()
     inventory_page.add_first_item_to_cart()
